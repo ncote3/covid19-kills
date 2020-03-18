@@ -3,30 +3,44 @@ import './CountryTabs.css';
 import CountryHeader from "../countryHeader/CountryHeader";
 import PersonGrid from "../personGrid/PersonGrid";
 import {Tabs, Tab} from "react-bootstrap";
+import callApi from "../../util/api/callApi";
 
 export default class Country extends Component {
+    state = {
+        country: {
+            usa: {},
+            italy: {},
+        },
+    };
+
+    componentDidMount() {
+        callApi('/api/PersonGrid')
+            .then(res => this.setState({ country: res.country }))
+            .catch(err => console.log(err));
+    }
+
     render() {
-        const { country1, country2 } = this.props;
+        const { usa, italy } = this.state.country;
         return (
             <div className={'CountryTabs'}>
                 <Tabs defaultActiveKey="United States" id="uncontrolled-tab-example">
-                    <Tab eventKey="United States" title="United States">
+                    <Tab eventKey={usa.name} title={usa.name}>
                         <div>
-                            <CountryHeader country={country1}/>
+                            <CountryHeader country={usa.name}/>
                             <PersonGrid
-                                popInfected={3880}
-                                popCured={8}
-                                popDead={61}
+                                popInfected={usa.popInfected}
+                                popCured={usa.popCured}
+                                popDead={usa.popDead}
                             />
                         </div>
                     </Tab>
-                    <Tab eventKey="Italy" title="Italy">
+                    <Tab eventKey={italy.name} title={italy.name}>
                         <div>
-                            <CountryHeader country={country2}/>
+                            <CountryHeader country={italy.name}/>
                             <PersonGrid
-                                popInfected={24747}
-                                popCured={2335}
-                                popDead={1809}
+                                popInfected={italy.popInfected}
+                                popCured={italy.popCured}
+                                popDead={italy.popDead}
                             />
                         </div>
                     </Tab>
