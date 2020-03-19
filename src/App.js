@@ -12,7 +12,9 @@ function App() {
     return (
         <div className="App">
             <NavBar />
-            <CountryTabs country1={'United States'} country2={'Italy'}/>
+            <div>
+                <CountryTabs country1={'United States'} country2={'Italy'}/>
+            </div>
             <link
                 rel="stylesheet"
                 href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
