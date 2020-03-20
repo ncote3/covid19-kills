@@ -1,14 +1,14 @@
-import React, {Component} from "react";
+import React, {Component, Suspense} from "react";
 import './CountryTabs.css';
 import CountryHeader from "../countryHeader/CountryHeader";
-import PersonGrid from "../personGrid/PersonGrid";
 import {Tabs, Tab} from "react-bootstrap";
 import callApi from "../../util/api/callApi";
 import Spinner from 'react-bootstrap/Spinner'
+const PersonGrid = React.lazy(() => import('../personGrid/PersonGrid'));
 
-export default class Country extends Component {
+export default class CountryTabs extends Component {
     state = {
-        country: {},
+        country:[],
         isLoading: true,
     };
 
@@ -38,11 +38,17 @@ export default class Country extends Component {
                             return(
                                 <Tab title={name} eventKey={name}>
                                     <CountryHeader country={name}/>
-                                    <PersonGrid
-                                        popInfected={popInfected}
-                                        popCured={popCured}
-                                        popDead={popDead}
-                                    />
+                                    <Suspense fallback={
+                                        <Spinner style={{margin: '2.5vw'}} animation="border" variant="primary" size={'lg'}>
+                                            <span className="sr-only">Loading...</span>
+                                        </Spinner>
+                                    }>
+                                        <PersonGrid
+                                            popInfected={popInfected}
+                                            popCured={popCured}
+                                            popDead={popDead}
+                                        />
+                                    </Suspense>
                                 </Tab>
                             )
                         })}

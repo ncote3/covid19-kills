@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import {Nav, Navbar, NavItem} from "react-bootstrap";
+import {LinkContainer} from 'react-router-bootstrap'
 
 export default class NavBar extends Component {
     render() {
@@ -7,12 +8,17 @@ export default class NavBar extends Component {
             <div style={{marginBottom: '2.5vw'}}>
                 <Navbar bg="dark" variant="dark" style={{backgroundColor: '#494949'}}>
                     <Navbar.Brand href="#home" style={{color: '#FF5D73'}}>COVID-19 Visualized.</Navbar.Brand>
-                    {/* @TODO create other pages*/}
-                    {/*<Nav className="mr-auto" style={{color:'#7C7A7A'}}>*/}
-                    {/*    <Nav.Link href="#home">Home</Nav.Link>*/}
-                    {/*    <Nav.Link href="#features">Features</Nav.Link>*/}
-                    {/*    <Nav.Link href="#pricing">Pricing</Nav.Link>*/}
-                    {/*</Nav>*/}
+                    <Nav className="mr-auto" style={{color:'#7C7A7A'}}>
+                        <LinkContainer to='/'>
+                            <NavItem>Home</NavItem>
+                        </LinkContainer>
+                        <LinkContainer to='/data'>
+                            <NavItem>Data</NavItem>
+                        </LinkContainer>
+                        <LinkContainer to='/about'>
+                            <NavItem>About</NavItem>
+                        </LinkContainer>
+                    </Nav>
                 </Navbar>
             </div>
         )
