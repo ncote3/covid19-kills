@@ -1,5 +1,5 @@
 import React, {Component, Suspense} from "react";
-import './CountryTabs.css';
+import './CountryTabs.scss';
 import CountryHeader from "../countryHeader/CountryHeader";
 import {Tabs, Tab} from "react-bootstrap";
 import callApi from "../../util/api/callApi";

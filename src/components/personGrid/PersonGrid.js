@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import './PersonGrid.css';
+import './PersonGrid.scss';
 import Person from "../person/Person";
 import {Badge, Container, Row} from "react-bootstrap";
 

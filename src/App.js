@@ -1,7 +1,7 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./components/navBar/NavBar";
 import CountryTabs from "./components/countryTabs/CountryTabs";

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import './CountryHeader.css';
+import './CountryHeader.scss';
 
 export default class PersonGrid extends Component {
     render() {
