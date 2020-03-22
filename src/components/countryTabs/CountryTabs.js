@@ -32,7 +32,7 @@ export default class CountryTabs extends Component {
         else {
             return (
                 <div className={'CountryTabs'}>
-                    <Tabs defaultActiveKey="United States" id="uncontrolled-tab-example">
+                    <Tabs defaultActiveKey="UnitedStates" id="uncontrolled-tab-example">
                         { Object.keys(data_obj).map(country => {
                             const {name, popInfected, popCured, popDead} = data_obj[country];
                             return(
