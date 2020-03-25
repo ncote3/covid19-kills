@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Nav, Navbar, NavItem} from "react-bootstrap";
+import {Nav, Navbar, NavLink} from "react-bootstrap";
 import {LinkContainer} from 'react-router-bootstrap';
 import './NavBar.scss';
 
@@ -9,15 +9,15 @@ export default class NavBar extends Component {
             <div style={{marginBottom: '2.5vw'}}>
                 <Navbar bg="dark" variant="dark" style={{backgroundColor: '#494949'}}>
                     <Navbar.Brand href="#home" style={{color: '#FF5D73'}}>COVID-19 Visualized.</Navbar.Brand>
-                    <Nav className="mr-auto" style={{color:'#7C7A7A'}}>
+                    <Nav className="mr-auto">
                         <LinkContainer to='/'>
-                            <NavItem>Home</NavItem>
+                            <NavLink>Home</NavLink>
                         </LinkContainer>
                         <LinkContainer to='/data'>
-                            <NavItem>Data</NavItem>
+                            <NavLink>Data</NavLink>
                         </LinkContainer>
                         <LinkContainer to='/about'>
-                            <NavItem>About</NavItem>
+                            <NavLink>About</NavLink>
                         </LinkContainer>
                     </Nav>
                 </Navbar>

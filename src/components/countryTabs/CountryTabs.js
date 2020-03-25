@@ -32,11 +32,11 @@ export default class CountryTabs extends Component {
         else {
             return (
                 <div className={'CountryTabs'}>
-                    <Tabs defaultActiveKey="UnitedStates" id="uncontrolled-tab-example">
+                    <Tabs defaultActiveKey="USA" id="uncontrolled-tab-example">
                         { Object.keys(data_obj).map(country => {
-                            const {name, popInfected, popCured, popDead} = data_obj[country];
+                            const {name, popInfected, popRecovered, popDead} = data_obj[country];
                             return(
-                                <Tab title={name} eventKey={name}>
+                                <Tab title={name} eventKey={name} key={name}>
                                     <CountryHeader country={name}/>
                                     <Suspense fallback={
                                         <Spinner style={{margin: '2.5vw'}} animation="border" variant="primary" size={'lg'}>
@@ -45,7 +45,7 @@ export default class CountryTabs extends Component {
                                     }>
                                         <PersonGrid
                                             popInfected={popInfected}
-                                            popCured={popCured}
+                                            popCured={popRecovered}
                                             popDead={popDead}
                                         />
                                     </Suspense>
