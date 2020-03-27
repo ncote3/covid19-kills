@@ -35,12 +35,6 @@ export default class PersonGrid extends Component {
             <div className={'Person-Grid'}>
                 <Container className={'Person-Grid-Pill-Container'}>
                     <Row>
-                        {/* @TODO find total population count*/}
-                        {/*{ popNotInfected > 0 ?*/}
-                        {/*    <Badge variant="primary" style={{backgroundColor: 'black'}}>Not Infected</Badge> :*/}
-                        {/*    <h1>Everyone is infected! Good luck my friend...</h1>*/}
-                        {/*}*/}
-
                         {/* @TODO fix error spacing*/}
                         { popCured > 0 ?
                             <Badge variant="primary" style={{backgroundColor: '#7C7A7A'}}>

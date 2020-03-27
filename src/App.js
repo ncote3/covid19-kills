@@ -4,7 +4,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./components/navBar/NavBar";
-import CountryTabs from "./components/countryTabs/CountryTabs";
+import CountryVisuals from "./components/countryVisual/CountryVisuals";
 import {
     BrowserRouter as Router,
     Switch,
@@ -22,7 +22,7 @@ function App() {
                 <div>
                     <NavBar />
                     <Switch>
-                        <Route path='/' component={CountryTabs} exact />
+                        <Route path='/' component={CountryVisuals} exact />
                         <Route path='/data' component={DataPage} exact />
                         <Route path='/about' component={AboutPage} exact />
                     </Switch>

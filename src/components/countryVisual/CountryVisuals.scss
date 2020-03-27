@@ -1,0 +1,18 @@
+.CountryVisuals {
+  .btn-group {
+    margin-bottom: 1vw;
+    .btn-primary {
+      color: #FF5D73 !important;
+      background-color: #343a40 !important;
+      border-color: #FF5D73 !important;
+    }
+    .btn-primary:hover {
+      color: #343a40 !important;
+      background-color: #FF5D73 !important;
+    }
+    .activeRegion {
+      color: #343a40 !important;
+      background-color: #FF5D73 !important;
+    }
+  }
+}

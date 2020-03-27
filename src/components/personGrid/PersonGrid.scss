@@ -1,9 +1,19 @@
 .Person-Grid {
   margin: 1vw !important;
+  padding-bottom: 1vw;
   .Person-Grid-Pill-Container {
     margin-bottom: 1vw !important;
   }
   .Person-Grid-Magnitude-Selector {
     margin-bottom: 2vw !important;
+    .btn-primary, .show>.btn-primary.dropdown-toggle, .dropdown-menu {
+      color: #FF5D73;
+      background-color: #343a40;
+      border-color: #FF5D73;
+    }
+    .dropdown-item:hover {
+      color: #343a40 !important;
+      background-color: #FF5D73;
+    }
   }
 }
